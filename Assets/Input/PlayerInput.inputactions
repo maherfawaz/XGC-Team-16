@@ -23,13 +23,22 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "62ae2799-bfe4-4e88-8aea-261f1fc2a9b8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "3D Vector",
-                    "id": "ef7d9b1b-fd50-4ecf-84a1-1e53866d0381",
-                    "path": "3DVector",
+                    "id": "63dc358e-3b5f-4812-a63a-bbe26dbf0ba0",
+                    "path": "3DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -38,8 +47,30 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Left",
-                    "id": "63398521-f4e8-40ba-b51e-e5365e96ce5f",
+                    "name": "up",
+                    "id": "e0ae15a8-1c01-4695-9143-7e1867fce71f",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move2D",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "83bed830-7821-4960-b69d-6c127a542da3",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move2D",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e9576364-cb7d-4f7d-a9a1-6b3f00da9479",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -49,9 +80,31 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Right",
-                    "id": "7d220896-9052-479d-8fd7-627b9978876d",
+                    "name": "right",
+                    "id": "5a0ad7e1-6738-4445-9264-b69c69645841",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move2D",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "forward",
+                    "id": "b9ab81b0-6a36-41f6-b7e0-0c312fc8464f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move2D",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "backward",
+                    "id": "d0d04a86-e7f6-4bc5-a295-f21e23ee7ffa",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -67,6 +120,17 @@
                     "processors": "",
                     "groups": ";Keyboard",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2c975a50-de16-48ec-acfd-70e7ab8a9dc8",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
