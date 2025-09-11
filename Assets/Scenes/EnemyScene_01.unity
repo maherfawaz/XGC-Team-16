@@ -11009,7 +11009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &349815005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39869,11 +39869,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18799477e4ac9994da6801e79b6e91f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpHeight: 2
-  jumpMaxCapacity: 1
-  jumpsAvailable: 0
-  gravityAmount: 5
+  moveSpeed: 15
+  isDashing: 0
+  desiredDirectionLength: 5
+  dashSpeed: 10
+  dashDistance: 3
+  dashMaxCapacity: 1
+  dashesAvailable: 1
+  dashDuration: 2.4971101
+  jumpHeight: 1.4
+  jumpMaxCapacity: 2
+  jumpsAvailable: 2
+  offsetY: 1
+  wallRaycastDistance: 1
+  wallJumpAngleLimit: 90
+  wallJumpAngle: 0
+  gravityAmount: 3
   raycastDistance: 0.5
 --- !u!143 &1178188484
 CharacterController:
@@ -42653,7 +42664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1606316297
 MonoBehaviour:
   m_ObjectHideFlags: 0
