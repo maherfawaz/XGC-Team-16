@@ -42679,9 +42679,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   health: 2
-  player: {fileID: 1178188482}
   distance: 20
-  invincible: 0
+  player: {fileID: 0}
+  col: {fileID: 0}
 --- !u!135 &1606316298
 SphereCollider:
   m_ObjectHideFlags: 0
