@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MutatedBird : MonoBehaviour
@@ -10,14 +8,20 @@ public class MutatedBird : MonoBehaviour
     float speed = 1f;
     [Tooltip("The health of the MutatedBird")]
     public int health = 2;
-    [Tooltip("The player that the MutatedBird will follow")]
-    public Transform player;
     [Tooltip("The distance at which the MutatedBird will start following the player")]
     public float distance = 10;
-    [Header("Dynamic")]
-    [Tooltip("Whether the MutatedBird is invincible or not, depending on the distance from the player")]
-    public bool invincible;
 
+    [Header("Dynamic")]
+    [Tooltip("The player that the MutatedBird will follow")]
+    public Transform player;
+    [Tooltip("The collider of the MutatedBird")]
+    public Collider col;
+
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        col = GetComponent<Collider>();
+    }
+    
     void Update() {
         if (health == 0) {
             Destroy(gameObject);
@@ -26,19 +30,19 @@ public class MutatedBird : MonoBehaviour
 
     void FixedUpdate() {
         if (Vector3.Distance(transform.position, player.position) < distance) {
-            invincible = false;
             transform.LookAt(player);
             transform.Rotate(new Vector3(0, -90, 0), Space.Self);
             transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
-        } else {
-            invincible = true;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (invincible) return;
-        if (collision.gameObject.CompareTag("Player")) {
-            health -= 1;
+    void OnCollisionEnter(Collision coll) {
+        if (coll.gameObject.CompareTag("Player")) {
+            //If the player hit the object when above the center of the collider
+            if (coll.gameObject.transform.position.y > transform.position.y + col.bounds.extents.y) {
+                //Die
+                Destroy(gameObject);
+            }
         }
     }
 }
