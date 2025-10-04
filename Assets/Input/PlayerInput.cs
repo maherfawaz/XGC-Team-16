@@ -124,7 +124,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""3D Vector"",
                     ""id"": ""63dc358e-3b5f-4812-a63a-bbe26dbf0ba0"",
-                    ""path"": ""3DVector(mode=1)"",
+                    ""path"": ""3DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

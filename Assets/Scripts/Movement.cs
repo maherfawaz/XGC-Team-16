@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
     [Header("Wall Jump")]
     [SerializeField] private float offsetY = 1f;
     [SerializeField] private float wallRaycastDistance = 5f;
-    [SerializeField] private float wallJumpAngleLimit = 90f;
+    //[SerializeField] private float wallJumpAngleLimit = 90f;
     [SerializeField] private float wallJumpAngle;
 
     [Space(5)]
@@ -215,6 +215,20 @@ public class Movement : MonoBehaviour
         Debug.DrawRay(position, desiredDirection * desiredDirectionLength, Color.green);
     }
 
+    public CharacterController GetCharacterController()
+    {
+        return characterController;
+    }
+
+    public void ResetPosition(Vector3 position)
+    {
+        this.transform.position = position;
+    }
+
+    public float GetVelocityY()
+    {
+        return velocityY;
+    }
     void OnEnable()
     {
         playerInput.Enable();
