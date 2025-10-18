@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -38,6 +39,16 @@ public class MovementV2 : MonoBehaviour {
     [Header("Teleport")]
     [SerializeField] private float respawnDuration = 0.5f;
     [SerializeField][ReadOnly] private bool isTeleporting = false;
+
+    [Header("Sound Effects")]
+    [SerializeField] private float footstepRate = 0.2f;
+    private float footstepTimer = 0f;
+    private int currentFootstep = 0;
+
+    [Space(5)]
+    [SerializeField] private AudioClip[] footstepSFX;
+    [SerializeField] private AudioClip jumpSFX;
+    [SerializeField] private AudioClip dashSFX;
 
     [Header("Developer Stuffs")]
     [SerializeField] private float raycastLength = 5f;
@@ -91,6 +102,17 @@ public class MovementV2 : MonoBehaviour {
         if (isGrounded) {
             animator.SetFloat("Speed", Mathf.Abs(moveDirection.x));
             canDash = true;
+
+            if (Mathf.Abs(moveDirection.x) > 0 && footstepTimer > footstepRate) 
+            {
+                currentFootstep = UnityEngine.Random.Range(0, (footstepSFX.Length - 1));
+                SoundEffectManager.instance.PlaySound(footstepSFX[currentFootstep]);
+                //Debug.Log($"Footstep played: {footstepSFX[currentFootstep]}");
+
+                footstepTimer = 0;
+            }
+
+            footstepTimer += Time.deltaTime;
         }
 
         // ROTATE/LOOK AT DIRECTION
@@ -102,12 +124,16 @@ public class MovementV2 : MonoBehaviour {
         if (playerInput.Movement.Jump.WasPressedThisFrame() && isGrounded) {
             velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
             animator.SetTrigger("Jump");
+
+            SoundEffectManager.instance.PlaySound(jumpSFX);
         }
 
         // DASH
         if (playerInput.Movement.Dash.WasPressedThisFrame() && canDash) {
             Vector3 dashDir = desiredDirection.magnitude > 0.1f ? desiredDirection : Vector3.right * transform.forward.x;
             StartCoroutine(Dash(dashDir));
+
+            SoundEffectManager.instance.PlaySound(dashSFX);
         }
 
         // APPLY GRAVITY
