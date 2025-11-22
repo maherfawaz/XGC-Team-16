@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MutatedBird : MonoBehaviour
+public class MutatedBird : Bird
 {
     [Header("Inscribed")]
     [Tooltip("The speed at which the MutatedBird moves")]
@@ -26,6 +26,8 @@ public class MutatedBird : MonoBehaviour
         if (health == 0) {
             Destroy(gameObject);
         }
+
+        PlayAudio(); // Inherited from Bird
     }
 
     void FixedUpdate() {

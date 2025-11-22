@@ -46382,6 +46382,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8242745151293959769, guid: b8dc0d2479fafa24b82cf2e0b7ece7e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457695182365011111, guid: b8dc0d2479fafa24b82cf2e0b7ece7e6, type: 3}
+      propertyPath: birdSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ef4200e65ae431b4b89cb46d0efeff66, type: 3}
+    - target: {fileID: 2526794310915512069, guid: b8dc0d2479fafa24b82cf2e0b7ece7e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3699245123266389144, guid: b8dc0d2479fafa24b82cf2e0b7ece7e6, type: 3}
       propertyPath: m_Name
       value: MutatedCrow
@@ -47417,6 +47429,10 @@ PrefabInstance:
     - target: {fileID: 7624112595622706570, guid: 4baa8e8001d07934d83af585e2e0e7df, type: 3}
       propertyPath: m_Name
       value: Crow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737010797471842478, guid: 4baa8e8001d07934d83af585e2e0e7df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69358,6 +69374,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4101435462767316895, guid: 4db3fb74efbda23499a775f5d1b3cb35, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4907645787938147810, guid: 4db3fb74efbda23499a775f5d1b3cb35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.547483

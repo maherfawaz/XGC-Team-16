@@ -142,5 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b665bbc0b340646925f7e92b7385e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pitchMin: 0.85
-  pitchMax: 1.15
+  pitchMin: 0.9
+  pitchMax: 1.1
